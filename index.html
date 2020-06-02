@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>13</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <div class="startWindow">
+    <h1>Найди совпадения</h1>
+
+    <div class="form-group">
+      <label for="name">Имя игрока:</label>
+      <input type="text" class="form-control" id="name" placeholder="Введите имя">
+    </div>
+
+    <div class="btn-group-toggle" data-toggle="buttons">
+      <label class="btn btn-outline-success active b1" data-toggle="tooltip"
+        data-placement="left" title="30 сек, 5 на запоминание">
+        <input type="radio" name="dif" data-time="30" data-delay="5" checked>
+        <span>Легко</span>
+      </label>
+      <label class="btn btn-outline-warning b2" data-toggle="tooltip"
+        data-placement="bottom" title="20 сек, 4 на запоминание">
+        <input type="radio" name="dif" data-time="20" data-delay="4">
+        <span>Нормально</span>
+      </label>
+      <label class="btn btn-outline-danger b3" data-toggle="tooltip"
+        data-placement="right" title="13 сек, 3 на запоминание">
+        <input type="radio" name="dif" data-time="13" data-delay="3">
+        <span>Сложно</span>
+      </label>
+    </div>
+
+    <div class="btns">
+      <button class="btn btn-primary startBtn">Начать</button>
+      <a tabindex="0" class="btn btn-secondary" role="button" data-toggle="popover"
+        data-trigger="focus" title="Правила игры" data-content="
+        После нажатия на кнопку вам дается несколько (в зависимости от сложности) секунд на запоминание содержимого 16 ячеек. 
+        За определенное время вам нужно найти как можно больше совпадений.">Правила</a>
+    </div>
+  </div>
+
+  <div class="game" style="display: none">
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+  </div>
+
+  <div class="info-container">
+    <div class="info" style="display: none">
+      <div class="first list-group text-right">
+        <div class="list-group-item bg-light">Игрок</div>
+        <div class="list-group-item bg-light">Сложность</div>
+        <div class="list-group-item bg-light">Заработанные баллы</div>
+        <div class="list-group-item bg-light timeLab">Оставшееся время</div>
+      </div>
+
+      <div class="list-group second">
+        <div class="nameVal list-group-item"></div>
+        <div class="difVal list-group-item"></div>
+        <div class="res list-group-item">0</div>
+        <div class="time list-group-item">-</div>
+      </div>
+    </div>
+
+    <div class="delay" style="display: none"></div>
+  </div>
+
+  <div class="modal fade" id="resultWindow" tabindex="-1" role="dialog"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Игра окончена!</h4>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary"
+            onclick="location.reload()">Выйти</button>
+          <button type="button" class="againBtn btn btn-success">Сыграть еще раз</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
